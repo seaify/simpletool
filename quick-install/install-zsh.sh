@@ -1,4 +1,5 @@
 #!/bin/sh
+apt-get update
 mkdir ~/opensource
 cd ~/opensource
 sudo apt-get --yes install zsh autojump
