@@ -1,5 +1,6 @@
 #!/bin/sh
 apt-get update
+apt-get install git
 mkdir ~/opensource
 cd ~/opensource
 sudo apt-get --yes install zsh autojump
