@@ -8,4 +8,6 @@ cd /opt
 tar zxvf pyOpenSSL-0.11.tar.gz 
 cd pyOpenSSL-0.11
 python setup.py install
+pip uninstall -y six
+pip install six==1.4.1
 pip install service_identity scrapy beautifulsoup4
