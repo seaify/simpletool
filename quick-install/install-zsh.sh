@@ -1,9 +1,8 @@
 #!/bin/sh
-apt-get update
-apt-get install git
+sudo apt-get update
+sudo apt-get --yes install git zsh autojump
 mkdir ~/opensource
 cd ~/opensource
-sudo apt-get --yes install zsh autojump
 git clone https://github.com/robbyrussell/oh-my-zsh ~/.oh-my-zsh
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 git clone https://github.com/zsh-users/zsh-history-substring-search.git
