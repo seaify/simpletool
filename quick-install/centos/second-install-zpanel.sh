@@ -1,5 +1,3 @@
-
-
 #!/usr/bin/expect -f
 
 set dest [lindex $argv 0]
@@ -35,9 +33,4 @@ send "y\r"
 
 expect "Install"
 send "y\r"
-
-
-
-
-
 interact
