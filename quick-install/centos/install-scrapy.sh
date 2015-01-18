@@ -11,3 +11,4 @@ python setup.py install
 pip uninstall -y six
 pip install six==1.4.1
 pip install service_identity scrapy beautifulsoup4
+#service_identity
