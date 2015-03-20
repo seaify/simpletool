@@ -1,4 +1,4 @@
-!/bin/sh
+#!/bin/sh
 #for ubuntu14.04
 apt-get install --yes pptpd pptp-linux
 wget https://raw.githubusercontent.com/seaify/tools/master/files/pptpd.conf -O /etc/pptpd.conf
