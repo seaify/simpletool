@@ -5,3 +5,4 @@
 5. curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/install-pip-1.3.sh | sh
 6. curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/install-zpanel-ubuntu7.sh | sh(zpanel)
 7. curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/install-ftp.sh | sh (broken)
+8. curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/install-quick-dev.sh | sh 
