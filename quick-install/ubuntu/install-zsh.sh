@@ -9,5 +9,5 @@ git clone https://github.com/zsh-users/zsh-history-substring-search.git
 git clone https://github.com/olivierverdier/zsh-git-prompt.git
 cd ~
 wget https://raw.githubusercontent.com/seaify/tools/master/files/.zshrc -O ~/.zshrc
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
 zsh

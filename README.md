@@ -24,7 +24,7 @@ curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/
 curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/install-shadowsock-server.sh | sh -s -- love
 ```
 
-shadowsocks client参考https://github.com/shadowsocks/shadowsocks/wiki/Ports-and-Clients就可以了，mac, ubuntu, windows, iphone, android经测试都可以正常使用，但iphone要越狱
+shadowsocks client参考https://github.com/shadowsocks/shadowsocks/wiki/Ports-and-Clients，就可以了，mac, ubuntu, windows, iphone, android经测试都可以正常使用，但iphone要越狱
 
 
 ### 安装zsh, 已经配置好相应插件
