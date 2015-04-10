@@ -33,3 +33,6 @@ shadowsocks client参考https://github.com/shadowsocks/shadowsocks/wiki/Ports-an
 ```
  curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/install-zsh.sh | sh
 ```
+
+## Bugs and Feature Requests
+有bug或者feature的requests，欢迎提交！
