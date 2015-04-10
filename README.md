@@ -7,7 +7,8 @@
 
 ### 安装pptp vpn服务
 参考文档https://help.ubuntu.com/community/PPTPServer
-执行下述命令，将创建一个pptp账户，用户名为user，密码为passwd
+执行下述命令，将创建一个pptp账户，用户名为user，密码为passwd。
+注意: 执行完后，需要重启机器生效。另外如果你连接不上vpn，可能是你家路由器没有vpn穿透功能，或者路由器未开启vpn穿透配置，我家的就是这样，只能手机3g使用vpn。
 ```sh
 curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/install-pptp.sh | sh -s -- user passwd
 ```
@@ -30,9 +31,14 @@ shadowsocks client参考https://github.com/shadowsocks/shadowsocks/wiki/Ports-an
 ### 安装zsh, 已经配置好相应插件
 使用zle-vi-visual vi-mode git-prompt autojump history history-substring-search jump sudo 这些插件。
 视频讲解: http://v.youku.com/v_show/id_XODkyNTc0NDIw.html
+执行完下述命令，就安装好了zsh以及其插件，配置文件查看.zshrc, 输入zsh开始体验吧。
 ```
  curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/install-zsh.sh | sh
 ```
 
 ## Bugs and Feature Requests
 有bug或者feature的requests，欢迎提交！
+
+## 后续
+- 会添加textexpander中有用的sinppet，以及alfred workflow, automator。
+- 关注能提高开发效率的工具。
