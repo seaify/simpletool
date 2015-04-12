@@ -36,6 +36,57 @@ shadowsocks client参考https://github.com/shadowsocks/shadowsocks/wiki/Ports-an
  curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/install-zsh.sh | sh
 ```
 
+
+## textexpander有用的snippets分享
+### [ftime.textexpander](textexpander/ftime.textexpander)
+用法: 复制一个10位的数字后，输入指定的abbreviation后，将该数字转化为2015-03-01 00:00:00格式的字符串。
+如复制1428846374后，输入;ftime, 替换为2015-04-12 21:46:14。
+
+### [time.textexpander](textexpander/time.textexpander)
+用法: 输入指定的abbreviation后，输出当前的时间戳(10位字符)
+如输入;time, 替换为1428846535。
+
+### [jsonp.textexpander](textexpander/jsonp.textexpander)
+用法: 复制jsonp的目标url，输入指定的abbreviation后，自动输出下列jsonp api的请求代码，且光标定位在console.log这句的下一行。
+```javascript
+jquery.ajax({
+      url: "https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins",
+      dataType: "jsonp",
+      success: function(data){
+        console.log(data);
+        
+      }});
+```
+
+### [nginx.textexpander](textexpander/nginx.textexpander)
+用法: 输入指定的abbreviation后, 在弹出的输入框中填入好域名test和端口5000(菜单已指定，不用输入默认即可)，即可配置好一个简单的nginx配置文件。
+```ngnix
+server {
+        listen   80;
+
+        server_name test.seaify.com;
+        access_log  /var/log/nginx/test_access.log;
+       error_log  /var/log/nginx/test_error.log;
+
+
+        location / {
+                proxy_pass http://127.0.0.1:5000;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+}
+```
+
+
+### [add_sudo_user.textexpander](textexpander/add_sudo_user.textexpander)
+用法: 输入指定的abbreviation后, 在弹出的输入框中填入用户名和密码，即可创建一个有sudo权限的新账户。
+
+
+### [ip.textexpander](textexpander/ip.textexpander)
+用法: 输入指定的abbreviation后, 替换为系统的外网ip(有时候填配置文件，需要外网ip，这时候我们去百度搜ip，或者终端下敲curl ifconfig.me都太慢了，还得重新回编辑器)
+
+
 ## Bugs and Feature Requests
 有bug或者feature的requests，欢迎提交！
 

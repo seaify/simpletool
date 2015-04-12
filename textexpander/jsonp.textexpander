@@ -1,0 +1,7 @@
+jquery.ajax({
+      url: "%clipboard",
+      dataType: "jsonp",
+      success: function(data){
+        console.log(data);
+        %|
+      }});

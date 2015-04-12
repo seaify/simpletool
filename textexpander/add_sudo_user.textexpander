@@ -1,0 +1,5 @@
+sudo useradd %filltext:name=name:default=chuck%
+sudo mkdir /home/%filltext:name=name:default=chuck%
+sudo chown %filltext:name=name:default=chuck%:%filltext:name=name:default=chuck% /home/%filltext:name=name:default=chuck%
+sudo bash -c "echo '%filltext:name=name:default=chuck%:%filltext:name=passwd:default=lsm123%' | /usr/sbin/chpasswd"
+sudo adduser %filltext:name=name:default=chuck% sudo

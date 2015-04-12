@@ -1,0 +1,1 @@
+curl http://icanhazip.com/

@@ -1,0 +1,4 @@
+[program:%filltext:name=name:default=proxy%]
+command=%clipboard
+directory=%filltext:name=dir:default=~%
+user=%filltext:name=user:default=root%
