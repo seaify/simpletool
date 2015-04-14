@@ -127,20 +127,6 @@ function server () {
     open "http://localhost:$port" && python -m SimpleHTTPServer "$port"
 }
 
-alias mongooffline="mongo -u togic -p 'togic4you!@Y' --authenticationDatabase admin"
-alias mongoonline="mongo  -u togic -p 'togic4youonline' --authenticationDatabase admin "
-alias biggest='find -type f -printf '\''%s %p\n'\'' | sort -nr | head -n 40 | gawk "{ print \$1/1000000 \" \" \$2 \" \" \$3 \" \" \$4 \" \" \$5 \" \" \$6 \" \" \$7 \" \" \$8 \" \" \$9 }"'
-function url-encode; {
-            setopt extendedglob
-                    echo "${${(j: :)@}//(#b)(?)/%$[[##16]##${match[1]}]}"
-}
-
-#export HOST="hello"
-#export SOCKS_SERVER=127.0.0.1:1080
-export DOCKER_TLS_VERIFY=1
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/chuck/.boot2docker/certs/boot2docker-vm
-
 # Search google for the given keywords.
 function google; {
             $VIEW "http://www.google.com/search?q=`url-encode "${(j: :)@}"`"
