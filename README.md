@@ -7,6 +7,12 @@
 ### [后台开发原则篇](rules/后台开发经验.md)
 
 ## 一键安装脚本
+### 安装simplehttpserver
+在当前目录下，执行下列命令，将该目录自动对外开放, 可用来托管图片，书籍等, 下面的脚本实际配置了相应的nginx，以及supervisor使用python -m SimpleHTTPServer。
+sh -s -- 后的第一个参数为域名地址，第二个为程序端口，默认8080，可选参数。
+```
+curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/install-simpleserver.sh | sh -s -- static.seaify.com [port]
+```
 
 ### 安装pptp vpn服务
 参考文档https://help.ubuntu.com/community/PPTPServer
