@@ -6,6 +6,25 @@
 ## 经验文章
 ### [后台开发原则篇](rules/后台开发经验.md)
 
+## Mac app推荐篇
+- [1password](https://agilebits.com/onepassword), 装上相应chrome插件后，登陆网站再也不需要记得各种密码了，只需要记得1password的主密码，大爱。
+- [textexpander](https://smilesoftware.com/TextExpander/index.html), 每天都在用的神器, 大量减少重复的输入，最简单例子比如输入;addr，就能出现你家的完整地址, 当然高端功能还有不少。
+- [alfred](http://www.alfredapp.com/), 网络上大量的alfred workflow，你能很方便的定制自己想要的workflow，mac上最惊艳的app。
+- [screenflow](http://www.telestream.net/screenflow/overview.htm), 录制视频，给你组内其它程序员讲讲课哈。
+- [slack](https://slack.com/), 很好的企业协同办公工具，我每天都往slackbot上发消息，记录一些临时想法。
+- [things](https://culturedcode.com/things/), gtd工具，管理你的工作效率
+- [fantastical 2](http://flexibits.com/Fantastical), 很好的日历软件，界面很漂亮，功能很简洁
+- [airmail](http://airmailapp.com/), 邮件真的需要个本地客户端，它支持markdown，支持定制规则
+- [haroopad](http://pad.haroopress.com/), 我最喜欢的markdown编辑器, 支持vi 模式，实时预览
+- [bartender](http://www.macbartender.com/), app装的多了，都显示在右上侧，就太挤了，它就是管理任务栏的
+- [vagrant manager](http://vagrantmanager.com/), 不少软件还是要用windows的，所以要虚拟机，这个软件便是管理vagrant虚拟机的
+- [teamviewer](https://www.teamviewer.com/en/index.aspx), 自由职业的，远程控制，访问
+- [moom](http://manytricks.com/moom/), 很方便的管理窗口，最大化，最小化，移到其它桌面，指定到桌面的位置
+- [clearmymac3](http://cleanmymac.com/), 有一天，你发现电脑硬盘空间不够了，或者想方便删软件，就是它了
+
+另外附一个淘宝店，http://macsofts.taobao.com/, 我的大部分软件是在这买的，不是盗版，是那种家庭版，或者id共享版，也有个人版, 比appstore要便宜一些。
+当然最稳妥的就是直接去appstore里买，或者官网里买。但真的，最好别去盗版，或者盗版了，有点钱后，还是买下正版的吧。
+
 ## 一键安装脚本
 ### 安装simplehttpserver
 在当前目录下，执行下列命令，将该目录自动对外开放, 可用来托管图片，书籍等, 下面的脚本实际配置了相应的nginx，以及supervisor使用python -m SimpleHTTPServer。
