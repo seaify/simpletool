@@ -28,9 +28,9 @@
 ## 一键安装脚本
 ### 一键将当前目录下的文件加入logrotate, 每日自动化进行压缩, 默认保留7天备份
 nginx, redis, mysql等许多系统服务在安装时，都会安装一份logrotate的配置文件，用来管理日志. 下面的这个脚本，就是用来运维值班人员，发现某台机器上磁盘空间不足，并找到了目录后，方便一键使用logrotate管理该目录的文件压缩，而不是简单的删除文件，下次又报警。
-下列脚本在日志目录如/var/logs/tomcat或类似的任意目录下，执行后，会对匹配到.log的文件，使用日志压缩，规则是保留7天的备份，gz压缩, 如1.log, 会生成1.log-20150422.gz这样的备份文件。
+下列脚本在日志目录如/var/logs/tomcat或类似的任意目录下，执行后，会对匹配到.log的文件，使用日志压缩，规则是保留7天的备份，gz压缩, 如1.log, 会生成1.log-20150422.gz这样的备份文件, 而生成的配置文件则为/etc/logrotate.d/mylog。
 ```sh
-curl https://raw.githubusercontent.com/seaify/tools/master/auto/quick-logrotate.sh | sudo sh -s .log
+curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/quick-logrotate.sh | sudo sh -s .log mylog
 ```
 
 ### 安装simplehttpserver
