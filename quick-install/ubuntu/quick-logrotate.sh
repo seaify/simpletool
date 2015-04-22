@@ -1,6 +1,6 @@
 #!/bin/sh
 
-apt-get install --yes logrotate
+sudo apt-get install --yes logrotate
 
 format=" {\n
 	copytruncate\n
@@ -19,5 +19,5 @@ content="$cpath""/$slash""$1""$format"
 file_name=$(basename $cpath)
 config_path="/etc/logrotate.d/$file_name"
 echo $content
-echo $content > $config_path
-/usr/sbin/logrotate -f $config_path
+sudo echo $content > $config_path
+sudo /usr/sbin/logrotate -f $config_path
