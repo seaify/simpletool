@@ -9,8 +9,11 @@
 ## Mac app推荐篇
 - [1password](https://agilebits.com/onepassword), 装上相应chrome插件后，登陆网站再也不需要记得各种密码了，只需要记得1password的主密码，大爱。
 - [textexpander](https://smilesoftware.com/TextExpander/index.html), 每天都在用的神器, 大量减少重复的输入，最简单例子比如输入;addr，就能出现你家的完整地址, 当然高端功能还有不少。
+- [iterm2](http://iterm2.com/), 可以方便的定制profile，windows，支持trigger，能轻松的创建个windows，指定目录打开mysql和redis，或运行其它程序。  
+- [hazel](http://www.noodlesoft.com/hazel.php), 对文件夹中的文件进行定制操作，若下载.zip文件会，自动压缩，移动到applications目录，如tutsplus网站下载的视频，自动移动到自己制定的文件夹，并自动打开，支持applescript。文件夹再也不混乱了。
 - [alfred](http://www.alfredapp.com/), 网络上大量的alfred workflow，你能很方便的定制自己想要的workflow，mac上最惊艳的app。
 - [screenflow](http://www.telestream.net/screenflow/overview.htm), 录制视频，给你组内其它程序员讲讲课哈。
+- [dropself](https://pilotmoon.com/dropshelf/), 很方便的拖曳管理复制粘贴  
 - [slack](https://slack.com/), 很好的企业协同办公工具，我每天都往slackbot上发消息，记录一些临时想法。
 - [things](https://culturedcode.com/things/), gtd工具，管理你的工作效率
 - [fantastical 2](http://flexibits.com/Fantastical), 很好的日历软件，界面很漂亮，功能很简洁
