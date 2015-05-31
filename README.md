@@ -1,7 +1,7 @@
 ## 简介
 后台服务开发过程中，总是需要做一些重复的事情，如安装zsh, ftp等，所以将使用过的服务做成了一键安装脚本，避免重复，程序员已经够苦了，不应该再在这种屁事上浪费生命。
 
-开发过程中常用的工具，如一键安装vpn, ss, zsh, 以及配置文件如vimrc, zshrc等, 注意以下安装脚本仅在ubuntu 14.04下经过测试。
+开发过程中常用的工具，如一键安装vpn, ftp, phpmyadmin shadowsocks, zsh, 以及配置文件如vimrc, zshrc等, 注意以下安装脚本仅在ubuntu 14.04下经过测试。
 
 ## 经验文章
 ### [后台开发原则篇](rules/后台开发经验.md)
@@ -29,19 +29,6 @@
 当然最稳妥的就是直接去appstore里买，或者官网里买。但真的，最好别去盗版，或者盗版了，有点钱后，还是买下正版的吧。
 
 ## 一键安装脚本
-### 一键将当前目录下的文件加入logrotate, 每日自动化进行压缩, 默认保留7天备份
-nginx, redis, mysql等许多系统服务在安装时，都会安装一份logrotate的配置文件，用来管理日志. 下面的这个脚本，就是用来运维值班人员，发现某台机器上磁盘空间不足，并找到了目录后，方便一键使用logrotate管理该目录的文件压缩，而不是简单的删除文件，下次又报警。
-下列脚本在日志目录如/var/logs/tomcat或类似的任意目录下，执行后，会对匹配到.log的文件，使用日志压缩，规则是保留7天的备份，gz压缩, 如1.log, 会生成1.log-20150422.gz这样的备份文件, 而生成的配置文件则为/etc/logrotate.d/mylog。
-```sh
-curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/quick-logrotate.sh | sudo sh -s .log mylog
-```
-
-### 安装simplehttpserver
-在当前目录下，执行下列命令，将该目录自动对外开放, 可用来托管图片，书籍等, 下面的脚本实际配置了相应的nginx，以及supervisor使用python -m SimpleHTTPServer。
-sh -s -- 后的第一个参数为域名地址，第二个为程序端口，默认8080，可选参数。
-```
-curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/install-simpleserver.sh | sh -s -- static.seaify.com [port]
-```
 
 ### 安装pptp vpn服务
 参考文档https://help.ubuntu.com/community/PPTPServer
@@ -54,7 +41,7 @@ curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/
 ### 安装phpmyadmin服务
 执行下述命令，将安装对应的nginx, phpmyadmin, 并做好相应配置, mysql-server需要自己安装
 ```sh
-curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/install-phpmyadmin.sh | sh -s -- root_passwd mysql_password
+curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/install-phpmyadmin.sh | sh
 ```
 ### 安装vsftpd服务
 执行下述命令，将创建一个ftp账户，用户名为chuck，密码为love
@@ -78,6 +65,21 @@ shadowsocks client参考https://github.com/shadowsocks/shadowsocks/wiki/Ports-an
 执行完下述命令，就安装好了zsh以及其插件，配置文件查看.zshrc, 输入zsh开始体验吧。
 ```
  curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/install-zsh.sh | sh
+```
+
+
+### 一键将当前目录下的文件加入logrotate, 每日自动化进行压缩, 默认保留7天备份
+nginx, redis, mysql等许多系统服务在安装时，都会安装一份logrotate的配置文件，用来管理日志. 下面的这个脚本，就是用来运维值班人员，发现某台机器上磁盘空间不足，并找到了目录后，方便一键使用logrotate管理该目录的文件压缩，而不是简单的删除文件，下次又报警。
+下列脚本在日志目录如/var/logs/tomcat或类似的任意目录下，执行后，会对匹配到.log的文件，使用日志压缩，规则是保留7天的备份，gz压缩, 如1.log, 会生成1.log-20150422.gz这样的备份文件, 而生成的配置文件则为/etc/logrotate.d/mylog。
+```sh
+curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/quick-logrotate.sh | sudo sh -s .log mylog
+```
+
+### 安装simplehttpserver
+在当前目录下，执行下列命令，将该目录自动对外开放, 可用来托管图片，书籍等, 下面的脚本实际配置了相应的nginx，以及supervisor使用python -m SimpleHTTPServer。
+sh -s -- 后的第一个参数为域名地址，第二个为程序端口，默认8080，可选参数。
+```
+curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/install-simpleserver.sh | sh -s -- static.seaify.com [port]
 ```
 
 
