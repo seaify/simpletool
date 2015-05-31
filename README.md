@@ -50,6 +50,12 @@ curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/
 ```sh
 curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/install-pptp.sh | sh -s -- user passwd
 ```
+
+### 安装phpmyadmin服务
+执行下述命令，将安装对应的nginx, phpmyadmin, 并做好相应配置, mysql-server需要自己安装
+```sh
+curl https://raw.githubusercontent.com/seaify/tools/master/quick-install/ubuntu/install-phpmyadmin.sh | sh -s -- root_passwd mysql_password
+```
 ### 安装vsftpd服务
 执行下述命令，将创建一个ftp账户，用户名为chuck，密码为love
 ```sh
