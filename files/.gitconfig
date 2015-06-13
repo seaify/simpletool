@@ -1,5 +1,5 @@
 [user]
-	name = chuck.lei 
+	name = chuck.lei
 	email = dilin.life@gmail.com
 [core]
 	editor = vim
@@ -8,22 +8,23 @@
 [color]
 	ui = true
 [alias]
-        undo = reset --hard 
-        pushtoserver = !git fetch origin && git rebase origin/master && git push origin HEAD:refs/for/master 
-        lastpatch = format-patch HEAD^
-        undolastcommit = reset --hard HEAD~1
-        update = !git fetch origin && git rebase origin/master
-	tar = "!f(){ tar -czvf $1.tar.gz `git ls-files`; }; f"
+  lastpatch = format-patch HEAD^
+  undolastcommit = reset --hard HEAD~1
+  backup = "!f(){ current=`git rev-parse --abbrev-ref HEAD`; git checkout -b "$current.bak"; git checkout $current; }; f"
+  listfiles = show --pretty="format:" --name-only
+  update = !git fetch origin && git rebase origin/develop
+  pushtoserver = "!f(){ current=`git rev-parse --abbrev-ref HEAD`; git update; git push origin "HEAD:$current"; }; f"
+	tar = "!f(){ current=`git rev-parse --abbrev-ref HEAD`; tar -czvf "$current.tar.gz" `git ls-files`; }; f"
 	deleteremote = "!f(){ git push origin --delete $1; }; f"
-        #git diff mybranch master -- myfile.cs
-        #git merge-base A B
-        #git cherry-pick [--edit] [-n] [-m parent-number] [-s] [-x] [--ff] <commit>
+  #git diff mybranch master -- myfile.cs
+  #git merge-base A B
+  #git cherry-pick [--edit] [-n] [-m parent-number] [-s] [-x] [--ff] <commit>
 
 [receive]
 	denyCurrentBranch = refuse
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

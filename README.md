@@ -6,6 +6,34 @@
 ## 经验文章
 ### [后台开发原则篇](rules/后台开发经验.md)
 
+## [git alias命令篇](files/.gitconfig)
+git很好用，不过在git的基础命令之上，可以构建一些更复杂的命令，简化git的操作流程，作为日常用的最多的工具，减少重复，便能节约不少时间
+### backup
+当你需要对当前分支进行一些危险的操作，担心误操作，或是为了留下一些重要的版本分支，进行测试时，使用git backup将当前的分支进行备份，比如当前是dev分支，执行该命令会生成dev.bak分支(dev的备份), 且当前分支会维持住在dev分支，而不是切换到dev.bak
+```sh
+backup = "!f(){ current=`git rev-parse --abbrev-ref HEAD`; git checkout -b "$current.bak"; git checkout $current; }; f"
+```
+
+### tar
+因一些原因，需要将当前branch下的文件都打包成一个压缩文件
+```sh
+tar = "!f(){ current=`git rev-parse --abbrev-ref HEAD`; tar -czvf "$current.tar.gz" `git ls-files`; }; f"
+```
+
+### pushtoserver
+将当期分支推送到remote上，且推送前rebase某个分支, 下面实例里是每次推送前，先rebase develop分支
+```sh
+update = !git fetch origin && git rebase origin/develop
+pushtoserver = "!f(){ current=`git rev-parse --abbrev-ref HEAD`; git update; git push origin "HEAD:$current"; }; f"
+```
+
+### listfiles
+git listfiles a145de2854ba5eff2d8aa2a22f2510a7565c2776 会列出这个commit中修改，增加，删除的文件
+```sh
+listfiles = show --pretty="format:" --name-only
+```
+
+
 ## Mac app推荐篇
 - [1password](https://agilebits.com/onepassword), 装上相应chrome插件后，登陆网站再也不需要记得各种密码了，只需要记得1password的主密码，大爱。
 - [textexpander](https://smilesoftware.com/TextExpander/index.html), 每天都在用的神器, 大量减少重复的输入，最简单例子比如输入;addr，就能出现你家的完整地址, 当然高端功能还有不少。
