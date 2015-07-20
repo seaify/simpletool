@@ -2,11 +2,11 @@ Gem::Specification.new do |s|
   s.name        = 'tools'
   s.version     = '0.0.1'
   s.date        = '2015-07-19'
-  s.summary     = "provide quick install command for pptp vpn, shadowsocks server, phpmyadmin, oh-my-zsh"
+  s.summary     = "convience tools for ubuntu"
   s.description = "provide quick install command for pptp vpn, shadowsocks server, phpmyadmin, oh-my-zsh"
   s.authors     = ["Chuck.lei"]
   s.email       = 'dilin.life@gmail.com'
-  s.files       = Dir["lib/tools.rb", "lib/support/**/*"]
+  s.files       = Dir["lib/tools.rb", "lib/support/**/**/*"]
   s.homepage    = 'https://github.com/seaify/tools'
   s.license     = 'MIT'
 
