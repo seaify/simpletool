@@ -1,3 +1,6 @@
+require 'thor'
+require 'awesome_print'
+
 class Tools < Thor
   include Thor::Actions
 
