@@ -1,7 +1,7 @@
 require 'thor'
 require 'awesome_print'
 
-class Tools < Thor
+class SimpleTool < Thor
   include Thor::Actions
 
   def self.source_root
