@@ -8,15 +8,26 @@ class SimpleTool < Thor
     File.dirname(__FILE__)
   end
 
+  no_commands do
+    def cp_file(src, dest, sudo=false)
+      command = 'cp ' + SimpleTool.source_root + '/' + src + ' ' + dest
+      command = 'sudo ' + command if sudo
+      ap command
+      `#{command}`
+    end
+  end
+
+
+
   desc "install_pptp_vpn", "quick install pptp vpn on ubuntu"
   def install_pptp_vpn
     `sudo apt-get install --yes pptpd pptp-linux`
-    copy_file 'lib/support/pptp_vpn/ubuntu/pptpd.conf', "/etc/pptpd.conf"
-    copy_file 'lib/support/pptp_vpn/ubuntu/pptpd-options', "/etc/ppp/pptpd-options"
+    cp_file('support/pptp_vpn/ubuntu/pptpd.conf', '/etc/pptpd.conf', true)
+    cp_file('support/pptp_vpn/ubuntu/pptpd-options', '/etc/ppp/pptpd-options', true)
     `sudo bash -c "echo '$1 * $2 *' >> /etc/ppp/chap-secrets"`
-    copy_file 'lib/support/pptp_vpn/ubuntu/sysctl.conf', "/etc/sysctl.conf"
-    copy_file 'lib/support/pptp_vpn/ubuntu/rc.local', "/etc/rc.local"
-    `modprobe nf_conntrack_proto_gre nf_conntrack_pptp`
+    cp_file('support/pptp_vpn/ubuntu/sysctl.conf', '/etc/sysctl.conf', true)
+    cp_file('support/pptp_vpn/ubuntu/rc.local', '/etc/rc.local', true)
+    `sudo modprobe nf_conntrack_proto_gre nf_conntrack_pptp`
     `sudo /etc/init.d/pptpd restart`
   end
 
