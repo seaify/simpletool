@@ -57,14 +57,17 @@ class SimpleTool < Thor
     `sudo service vsftpd restart`
   end
 
-  desc "install_shadowsocks_server", "quick install shadowsocks server on ubuntu"
-  def install_shadowsocks_server
-
-  end
-
   desc "install_zsh", "quick install oh-my-zsh with plugins configed on ubuntu"
   def install_zsh
-
+    `sudo apt-get --yes install git zsh autojump`
+    `mkdir ~/opensource`
+    `git clone https://github.com/robbyrussell/oh-my-zsh ~/.oh-my-zsh`
+    `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/opensource/zsh-syntax-highlighting`
+    `git clone https://github.com/zsh-users/zsh-history-substring-search.git ~/opensource/zsh-history-substring-search`
+    `git clone https://github.com/olivierverdier/zsh-git-prompt.git ~/opensource/zsh-git-prompt`
+    cp_file('support/zsh/.zshrc', '~/.zshrc')
+    `sudo chsh -s $(which zsh)`
+    `zsh`
   end
 
 
