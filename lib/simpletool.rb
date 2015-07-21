@@ -38,21 +38,23 @@ class SimpleTool < Thor
 
     #modify mysql.ini
     `sudo sed -i'' -e '/bind-address/d' /etc/mysql/my.cnf`
-    #
-    ##wget nginx default
-    #sudo wget https://raw.githubusercontent.com/seaify/tools/master/files/nginx.phpmyadmin.default -O /etc/nginx/sites-enabled/default
+
     cp_file('support/phpmyadmin/nginx.phpmyadmin.default',  '/etc/nginx/sites-enabled/nginx.phpmyadmin.default', true)
     cp_file('support/phpmyadmin/phpmyadmin',  '/usr/share/nginx/html/', true)
-    #
-    ##download phpmyadmin files
-    #cd /usr/share/nginx/html
-    #sudo wget http://superb-dca2.dl.sourceforge.net/project/phpmyadmin/phpMyAdmin/4.4.8/phpMyAdmin-4.4.8-all-languages.tar.bz2
-    #sudo tar xvf phpMyAdmin-4.4.8-all-languages.tar.bz2
-    #sudo mv phpMyAdmin-4.4.8-all-languages phpmyadmin
-    #
     `sudo service nginx reload`
     `sudo service php5-fpm restart`
+  end
 
+  desc "install_ftp username passwd", "install ftp on ubuntu, need provide username & passwd"
+  def install_ftp(username, passwd)
+    `sudo apt-get --yes install wget vsftpd`
+    `sudo useradd #{username}`
+    `sudo mkdir /home/#{username}`
+    `sudo chown "#{username}:#{username}" "/home/$1"`
+    `sudo bash -c "echo '#{username}:#{passwd}' | /usr/sbin/chpasswd"`
+    `sudo rm /etc/pam.d/vsftpd`
+    cp_file('support/ftp/vsftpd.conf', '/etc/vsftpd.conf', true)
+    `sudo service vsftpd restart`
   end
 
   desc "install_shadowsocks_server", "quick install shadowsocks server on ubuntu"
