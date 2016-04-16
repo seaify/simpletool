@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'simpletool'
-  s.version     = '0.0.2'
-  s.date        = '2015-07-19'
+  s.version     = '0.0.3'
+  s.date        = '2016-04-16'
   s.summary     = "convience simple tools for ubuntu"
   s.description = "provide quick install command for pptp vpn, shadowsocks server, phpmyadmin, oh-my-zsh"
   s.authors     = ["seaify"]

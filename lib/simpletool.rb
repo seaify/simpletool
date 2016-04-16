@@ -20,11 +20,12 @@ class SimpleTool < Thor
 
 
   desc "install_pptp_vpn username passwd", "quick install pptp vpn on ubuntu, need provide username & password, remember to reboot machine to check!!!"
-  def install_pptp_vpn
+  def install_pptp_vpn(user, pwd)
+    ap "hello"
     `sudo apt-get install --yes pptpd pptp-linux`
     cp_file('support/pptp_vpn/ubuntu/pptpd.conf', '/etc/pptpd.conf', true)
     cp_file('support/pptp_vpn/ubuntu/pptpd-options', '/etc/ppp/pptpd-options', true)
-    `sudo bash -c "echo '$1 * $2 *' >> /etc/ppp/chap-secrets"`
+    `sudo bash -c "echo '#{user} * #{pwd} *' >> /etc/ppp/chap-secrets"`
     cp_file('support/pptp_vpn/ubuntu/sysctl.conf', '/etc/sysctl.conf', true)
     cp_file('support/pptp_vpn/ubuntu/rc.local', '/etc/rc.local', true)
     `sudo modprobe nf_conntrack_proto_gre nf_conntrack_pptp`
