@@ -39,9 +39,11 @@ class SimpleTool < Thor
 
     #modify mysql.ini
     `sudo sed -i'' -e '/bind-address/d' /etc/mysql/my.cnf`
+    `wget https://files.phpmyadmin.net/phpMyAdmin/4.4.15.8/phpMyAdmin-4.4.15.8-english.tar.gz -O phpmyadmin.tar.gz`
+    `tar -xvzf phpmyadmin.tar.gz`
+    `sudo mv phpMyAdmin-4.4.15.8-english /usr/share/nginx/html/phpmyadmin`
 
     cp_file('support/phpmyadmin/nginx.phpmyadmin.default',  '/etc/nginx/sites-enabled/nginx.phpmyadmin.default', true)
-    cp_file('support/phpmyadmin/phpmyadmin',  '/usr/share/nginx/html/', true)
     `sudo service nginx reload`
     `sudo service php5-fpm restart`
   end
